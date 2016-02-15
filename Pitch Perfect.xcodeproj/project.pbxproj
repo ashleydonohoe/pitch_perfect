@@ -193,6 +193,7 @@
 				TargetAttributes = {
 					E069BAB01C719AB000C9E0B6 = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = LMMQL6UH2F;
 					};
 					E069BAC41C719AB100C9E0B6 = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -397,6 +398,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Pitch Perfect/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ashleyddesigns.Pitch-Perfect";
@@ -408,6 +410,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Pitch Perfect/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ashleyddesigns.Pitch-Perfect";
