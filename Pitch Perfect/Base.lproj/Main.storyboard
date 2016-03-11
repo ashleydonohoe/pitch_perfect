@@ -17,14 +17,41 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nnb-aa-MkH">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nnb-aa-MkH">
                                 <rect key="frame" x="276" y="285" width="49" height="30"/>
                                 <color key="backgroundColor" red="0.92853730916976929" green="0.70509302616119385" blue="0.93160861730575562" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Record"/>
+                                <connections>
+                                    <action selector="recordAudio:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yB2-Lr-hW5"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to Record" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gMC-kA-d0U">
+                                <rect key="frame" x="247" y="330" width="107" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V2d-7a-96v">
+                                <rect key="frame" x="248" y="384" width="106" height="30"/>
+                                <state key="normal" title="Stop Recording"/>
+                                <connections>
+                                    <action selector="stopRecording:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1mt-Z8-Gfa"/>
+                                </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.33224290609359741" green="0.77191591262817383" blue="0.91349023580551147" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="gMC-kA-d0U" firstAttribute="centerX" secondItem="Nnb-aa-MkH" secondAttribute="centerX" id="85M-7s-EZ7"/>
+                            <constraint firstItem="Nnb-aa-MkH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Tv8-ou-psV"/>
+                            <constraint firstItem="V2d-7a-96v" firstAttribute="centerX" secondItem="gMC-kA-d0U" secondAttribute="centerX" id="Ty9-Xb-jZJ"/>
+                            <constraint firstItem="V2d-7a-96v" firstAttribute="top" secondItem="gMC-kA-d0U" secondAttribute="bottom" constant="33" id="WP6-b5-f8m"/>
+                            <constraint firstItem="gMC-kA-d0U" firstAttribute="top" secondItem="Nnb-aa-MkH" secondAttribute="bottom" constant="15" id="nug-Pn-pVs"/>
+                            <constraint firstItem="Nnb-aa-MkH" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ukf-j5-F67"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="recordingLabel" destination="gMC-kA-d0U" id="u6Q-OR-46e"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
