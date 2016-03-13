@@ -16,6 +16,7 @@
 		E069BAD51C719AB100C9E0B6 /* Pitch_PerfectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E069BAD41C719AB100C9E0B6 /* Pitch_PerfectUITests.swift */; };
 		E0CF2FE41C95F06700D9D1F8 /* PlaySoundsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CF2FE31C95F06700D9D1F8 /* PlaySoundsViewController.swift */; };
 		E0CF2FE61C95F44200D9D1F8 /* movie_quote.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E0CF2FE51C95F44200D9D1F8 /* movie_quote.mp3 */; };
+		E0CF2FE81C9630A000D9D1F8 /* RecordedAudio.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CF2FE71C9630A000D9D1F8 /* RecordedAudio.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		E069BAD61C719AB100C9E0B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E0CF2FE31C95F06700D9D1F8 /* PlaySoundsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaySoundsViewController.swift; sourceTree = "<group>"; };
 		E0CF2FE51C95F44200D9D1F8 /* movie_quote.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = movie_quote.mp3; sourceTree = "<group>"; };
+		E0CF2FE71C9630A000D9D1F8 /* RecordedAudio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordedAudio.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				E069BABB1C719AB000C9E0B6 /* Assets.xcassets */,
 				E069BABD1C719AB000C9E0B6 /* LaunchScreen.storyboard */,
 				E069BAC01C719AB000C9E0B6 /* Info.plist */,
+				E0CF2FE71C9630A000D9D1F8 /* RecordedAudio.swift */,
 			);
 			path = "Pitch Perfect";
 			sourceTree = "<group>";
@@ -264,6 +267,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0CF2FE81C9630A000D9D1F8 /* RecordedAudio.swift in Sources */,
 				E069BAB71C719AB000C9E0B6 /* RecordSoundsViewController.swift in Sources */,
 				E0CF2FE41C95F06700D9D1F8 /* PlaySoundsViewController.swift in Sources */,
 				E069BAB51C719AB000C9E0B6 /* AppDelegate.swift in Sources */,
@@ -411,7 +415,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ashleyddesigns.Pitch-Perfect";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -424,7 +428,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ashleyddesigns.Pitch-Perfect";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
