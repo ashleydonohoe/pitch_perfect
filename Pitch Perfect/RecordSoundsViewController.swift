@@ -27,9 +27,6 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        stopRecordingButton.hidden = true
-        resumeRecordingButton.hidden = true
-        pauseRecordingButton.hidden = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -39,8 +36,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
 
     @IBAction func recordAudio(sender: AnyObject) {
         recordingLabel.text = "Recording in progress"
-        stopRecordingButton.hidden = false
-        pauseRecordingButton.hidden = false
+        setButtonHiddenUI(false, pause: false, resume: true)
         stopRecordingButton.enabled = true
         recordButton.enabled = false
         
@@ -68,6 +64,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     
     @IBAction func resumeRecording(sender: AnyObject) {
         recordingLabel.text = "Recording in progress"
+        setButtonHiddenUI(false, pause: false, resume: true)
         audioRecorder.record()
     }
     
@@ -82,8 +79,15 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     
     override func viewWillAppear(animated: Bool) {
         stopRecordingButton.enabled = false
+        setButtonHiddenUI(true, pause: true, resume: true)
     }
     
+    func setButtonHiddenUI(stop: Bool, pause: Bool, resume: Bool) {
+        stopRecordingButton.hidden = stop
+        resumeRecordingButton.hidden = resume
+        pauseRecordingButton.hidden = pause
+        
+    }
     func audioRecorderDidFinishRecording(recorder: AVAudioRecorder, successfully flag: Bool) {
         if(flag) {
             recordedAudio = RecordedAudio(filePathUrl: recorder.url, title: recorder.url.lastPathComponent!)
