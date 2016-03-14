@@ -31,13 +31,11 @@ class PlaySoundsViewController: UIViewController {
     }
     
     @IBAction func playSlow(sender: AnyObject) {
-        audioPlayer.rate = 0.5
-        startPlaying()
+        startPlayingWithRate(0.5)
     }
 
     @IBAction func playFast(sender: AnyObject) {
-        audioPlayer.rate = 1.5
-        startPlaying()
+        startPlayingWithRate(1.5)
     }
     
     @IBAction func playChipmunkAudio(sender: AnyObject) {
@@ -49,15 +47,13 @@ class PlaySoundsViewController: UIViewController {
     }
     
     func playAudioWithVariablePitch(pitch: Float) {
-        audioPlayer.stop()
-        audioEngine.stop()
-        audioEngine.reset()
+        stopAudio()
         
         let audioPlayerNode = AVAudioPlayerNode()
         audioEngine.attachNode(audioPlayerNode)
         
         let changePitchEffect = AVAudioUnitTimePitch()
-        changePitchEffect.pitch = 1000
+        changePitchEffect.pitch = pitch
         audioEngine.attachNode(changePitchEffect)
         
         audioEngine.connect(audioPlayerNode, to: changePitchEffect, format: nil)
@@ -69,15 +65,20 @@ class PlaySoundsViewController: UIViewController {
         audioPlayerNode.play()
     }
     
-    func startPlaying() {
+    func startPlayingWithRate(rate: Float) {
         // Stops the audioPlayer and audioEngine and resets the audioEngine before playing the new audio effect
-        audioPlayer.stop()
-        audioEngine.stop()
-        audioEngine.reset()
+        stopAudio()
+        audioPlayer.rate = rate
         audioPlayer.play()
     }
     
     @IBAction func stopPlaying(sender: AnyObject) {
+        stopAudio()
+    }
+    
+    func stopAudio() {
         audioPlayer.stop()
+        audioEngine.stop()
+        audioEngine.reset()
     }
 }
