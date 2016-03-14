@@ -17,6 +17,9 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     
     @IBOutlet weak var stopRecordingButton: UIButton!
     
+    @IBOutlet weak var pauseRecordingButton: UIButton!
+    @IBOutlet weak var resumeRecordingButton: UIButton!
+    
     var audioRecorder:AVAudioRecorder!
     var recordedAudio:RecordedAudio!
     
@@ -25,6 +28,8 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         stopRecordingButton.hidden = true
+        resumeRecordingButton.hidden = true
+        pauseRecordingButton.hidden = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -35,6 +40,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     @IBAction func recordAudio(sender: AnyObject) {
         recordingLabel.text = "Recording in progress"
         stopRecordingButton.hidden = false
+        pauseRecordingButton.hidden = false
         stopRecordingButton.enabled = true
         recordButton.enabled = false
         
@@ -51,6 +57,17 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         audioRecorder.delegate = self
         audioRecorder.meteringEnabled = true
         audioRecorder.prepareToRecord()
+        audioRecorder.record()
+    }
+    
+    @IBAction func pauseRecording(sender: AnyObject) {
+        recordingLabel.text = "Recording paused"
+        audioRecorder.pause()
+        resumeRecordingButton.hidden = false
+    }
+    
+    @IBAction func resumeRecording(sender: AnyObject) {
+        recordingLabel.text = "Recording in progress"
         audioRecorder.record()
     }
     
