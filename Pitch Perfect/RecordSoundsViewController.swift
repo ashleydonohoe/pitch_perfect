@@ -24,6 +24,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        stopRecordingButton.hidden = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,6 +34,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
 
     @IBAction func recordAudio(sender: AnyObject) {
         recordingLabel.text = "Recording in progress"
+        stopRecordingButton.hidden = false
         stopRecordingButton.enabled = true
         recordButton.enabled = false
         
@@ -43,7 +45,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         print(filePath)
         
         let session = AVAudioSession.sharedInstance()
-        try! session.setCategory(AVAudioSessionCategoryRecord)
+        try! session.setCategory(AVAudioSessionCategoryPlayAndRecord, withOptions: AVAudioSessionCategoryOptions.DefaultToSpeaker)
         
         try! audioRecorder = AVAudioRecorder(URL: filePath!, settings: [:])
         audioRecorder.delegate = self
